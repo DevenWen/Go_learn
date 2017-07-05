@@ -187,7 +187,7 @@ func fun14()  {
 
 	x ++
 	println(x)
-
+	println(&x)
 }
 
 func main() {

@@ -4,6 +4,8 @@ package main
 //import "fmt"
 import (
 	"os"
+	"errors"
+	"log"
 )
 
 func fun1() {
@@ -156,6 +158,38 @@ func fun12()  {
 
 }
 
+func check(x int) error  {
+	if x <= 0 {
+		return errors.New("x <= 0")
+	}
+
+	return nil
+}
+
+func fun13()  {
+	x := 10
+
+	if err := check(x); err == nil {
+		x ++
+		println(x)
+	} else {
+		log.Fatalln(err)
+	}
+
+}
+
+func fun14()  {
+	x := 10
+
+	if err := check(x); err != nil {
+		log.Fatalln(err)
+	}
+
+	x ++
+	println(x)
+
+}
+
 func main() {
 	//fun1()
 	//fun2()
@@ -168,6 +202,8 @@ func main() {
 	//fun9()
 	//fun10()
 	//fun11()
-	fun12()
+	//fun12()
+	//fun13()
+	fun14()
 }
 
